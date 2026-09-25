@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Prompt-to-SDLC Studio — IBM AI Builders Challenge / National Hackathon" />
+  <title>Prompt-to-SDLC Studio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header">
+  <div class="header-inner">
+    <span class="logo">⬡ Prompt-to-SDLC Studio</span>
+    <span class="badge">IBM AI Builders Challenge</span>
+  </div>
+</header>
+
+<!-- ============================================================
+     TAB NAVIGATION (CSS-only radio trick)
+     6 tabs: Hero | PRD | Arsitektur | User Stories | API & Data | TODO + Test
+     ============================================================ -->
+
+<!-- Radio inputs (hidden) -->
+<input type="radio" name="tab" id="tab1" class="tab-radio" checked />
+<input type="radio" name="tab" id="tab2" class="tab-radio" />
+<input type="radio" name="tab" id="tab3" class="tab-radio" />
+<input type="radio" name="tab" id="tab4" class="tab-radio" />
+<input type="radio" name="tab" id="tab5" class="tab-radio" />
+<input type="radio" name="tab" id="tab6" class="tab-radio" />
+
+<!-- Tab labels -->
+<nav class="tab-nav" aria-label="Navigasi Modul SDLC">
+  <label for="tab1" class="tab-label">🏠 Hero</label>
+  <label for="tab2" class="tab-label">📋 PRD</label>
+  <label for="tab3" class="tab-label">🏗 Arsitektur</label>
+  <label for="tab4" class="tab-label">📖 User Stories</label>
+  <label for="tab5" class="tab-label">🔌 API &amp; Data</label>
+  <label for="tab6" class="tab-label">✅ TODO &amp; Tes</label>
+</nav>
+
+<!-- ============================================================
+     MAIN CONTENT PANELS
+     ============================================================ -->
+<main class="tab-content">
+
+  <!-- ==================== PANEL 1: HERO ==================== -->
+  <section class="panel" id="panel1" aria-labelledby="hero-heading">
+    <div class="hero-wrap">
+      <div class="hero-eyebrow">💡 Ide Produk Anda</div>
+      <h1 id="hero-heading" class="hero-title">Prompt-to-SDLC Studio</h1>
+      <blockquote class="idea-echo">
+        "Sebuah platform berbasis AI yang mengubah satu kalimat ide produk menjadi dokumen SDLC lengkap — PRD, arsitektur, user stories, API spec, TODO, dan rencana uji — secara instan tanpa backend atau autentikasi tambahan."
+      </blockquote>
+      <p class="hero-sub">
+        Masukkan satu kalimat ide produk → dapatkan seluruh artefak rekayasa perangkat lunak secara otomatis, ditenagai oleh <strong>IBM Bob AI</strong>.
+      </p>
+      <div class="hero-cards">
+        <div class="hcard">
+          <span class="hcard-icon">⚡</span>
+          <span class="hcard-label">Instan</span>
+          <span class="hcard-desc">SDLC dalam hitungan detik</span>
+        </div>
+        <div class="hcard">
+          <span class="hcard-icon">🤖</span>
+          <span class="hcard-label">AI-Powered</span>
+          <span class="hcard-desc">Didukung IBM Bob</span>
+        </div>
+        <div class="hcard">
+          <span class="hcard-icon">📄</span>
+          <span class="hcard-label">HTML-Only</span>
+          <span class="hcard-desc">Zero backend, zero auth</span>
+        </div>
+        <div class="hcard">
+          <span class="hcard-icon">🔍</span>
+          <span class="hcard-label">Reviewed</span>
+          <span class="hcard-desc">Output siap reviewer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PANEL 2: PRD ==================== -->
+  <section class="panel" id="panel2" aria-labelledby="prd-heading">
+    <h2 id="prd-heading" class="section-title">📋 Product Requirements Document (PRD)</h2>
+
+    <div class="prd-grid">
+
+      <!-- Tujuan -->
+      <div class="prd-card">
+        <h3 class="card-title">🎯 Tujuan Produk</h3>
+        <p>Menyediakan alat bantu rekayasa perangkat lunak berbasis AI yang memungkinkan siapa saja — mulai dari founder, product manager, hingga developer — menghasilkan dokumen SDLC berkualitas produksi hanya dari satu kalimat ide, tanpa perlu keahlian teknis mendalam.</p>
+      </div>
+
+      <!-- Problem Statement -->
+      <div class="prd-card">
+        <h3 class="card-title">⚠️ Problem Statement</h3>
+        <ul class="prd-list">
+          <li>Menulis PRD, arsitektur, dan user stories memakan waktu berhari-hari bahkan berminggu-minggu.</li>
+          <li>Tim kecil / solo founder tidak memiliki bandwidth untuk dokumentasi menyeluruh.</li>
+          <li>Inkonsistensi antar artefak menyebabkan miskomunikasi antara bisnis dan engineering.</li>
+          <li>Tidak ada alat ringan (HTML-only) yang bisa dijalankan offline tanpa dependensi eksternal.</li>
+        </ul>
+      </div>
+
+      <!-- Target Pengguna -->
+      <div class="prd-card">
+        <h3 class="card-title">👥 Target Pengguna</h3>
+        <ul class="prd-list">
+          <li><strong>Product Manager</strong> — butuh PRD cepat untuk sprint planning.</li>
+          <li><strong>Solo Developer / Indie Hacker</strong> — ingin blueprint sebelum coding.</li>
+          <li><strong>Startup Founder</strong> — perlu pitch material berbasis dokumen teknis.</li>
+          <li><strong>Mahasiswa / Peserta Hackathon</strong> — deadline ketat, butuh scaffold cepat.</li>
+        </ul>
+      </div>
+
+      <!-- Scope In/Out -->
+      <div class="prd-card prd-card--wide">
+        <h3 class="card-title">📐 Scope</h3>
+        <div class="scope-cols">
+          <div class="scope-in">
+            <h4>✅ In-Scope</h4>
+            <ul>
+              <li>Input satu kalimat ide produk</li>
+              <li>Generate PRD otomatis</li>
+              <li>Diagram arsitektur CSS</li>
+              <li>5+ User Stories terstruktur</li>
+              <li>Spesifikasi API &amp; skema data</li>
+              <li>TODO list + timeline</li>
+              <li>Rencana uji &amp; analisis risiko</li>
+              <li>Output HTML statis siap cetak</li>
+            </ul>
+          </div>
+          <div class="scope-out">
+            <h4>🚫 Out-of-Scope</h4>
+            <ul>
+              <li>Backend / server-side processing</li>
+              <li>Autentikasi / manajemen user</li>
+              <li>Database / penyimpanan persisten</li>
+              <li>Framework JS (React, Vue, dll)</li>
+              <li>CDN / font / gambar eksternal</li>
+              <li>CI/CD pipeline otomatis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Acceptance Criteria -->
+      <div class="prd-card prd-card--wide">
+        <h3 class="card-title">✔️ Acceptance Criteria</h3>
+        <ol class="acceptance-list">
+          <li><span class="ac-tag">AC-01</span> Ide produk user di-echo verbatim di bagian Hero tanpa modifikasi apapun.</li>
+          <li><span class="ac-tag">AC-02</span> Semua 6 tab dapat diakses dan konten tiap panel konsisten dengan ide produk.</li>
+          <li><span class="ac-tag">AC-03</span> Halaman merender sempurna di viewport 360px – 1280px tanpa horizontal scroll.</li>
+          <li><span class="ac-tag">AC-04</span> Saat dicetak (@media print), semua panel tampil dan nav tab tersembunyi.</li>
+          <li><span class="ac-tag">AC-05</span> Zero error console; tidak ada dependensi JS, framework, atau resource eksternal.</li>
+        </ol>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== PANEL 3: ARSITEKTUR ==================== -->
+  <section class="panel" id="panel3" aria-labelledby="arch-heading">
+    <h2 id="arch-heading" class="section-title">🏗 Arsitektur Sistem</h2>
+
+    <!-- CSS Architecture Diagram -->
+    <div class="arch-diagram" role="img" aria-label="Diagram alur: User → Client → IBM Bob AI → HTML Output → Reviewer">
+      <div class="arch-node arch-node--user">
+        <span class="arch-icon">👤</span>
+        <span class="arch-label">User</span>
+        <span class="arch-sub">1 kalimat ide</span>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node arch-node--client">
+        <span class="arch-icon">🌐</span>
+        <span class="arch-label">Client</span>
+        <span class="arch-sub">HTML5 / CSS3<br/>Browser</span>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node arch-node--bob">
+        <span class="arch-icon">🤖</span>
+        <span class="arch-label">IBM Bob AI</span>
+        <span class="arch-sub">Prompt Engine<br/>SDLC Generator</span>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node arch-node--output">
+        <span class="arch-icon">📄</span>
+        <span class="arch-label">HTML Output</span>
+        <span class="arch-sub">Artefak SDLC<br/>Statis</span>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node arch-node--reviewer">
+        <span class="arch-icon">🔍</span>
+        <span class="arch-label">Reviewer</span>
+        <span class="arch-sub">PM / Dev<br/>Stakeholder</span>
+      </div>
+    </div>
+
+    <!-- Komponen Tabel -->
+    <h3 class="subsection-title">Tabel Komponen Sistem</h3>
+    <div class="table-wrap">
+      <table class="data-table" aria-label="Tabel komponen sistem Prompt-to-SDLC">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Komponen</th>
+            <th scope="col">Teknologi</th>
+            <th scope="col">Peran</th>
+            <th scope="col">Ketergantungan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><span class="comp-badge comp-badge--cyan">UI Layer</span></td>
+            <td>HTML5 + CSS3</td>
+            <td>Menampilkan semua panel SDLC, tab navigasi CSS-only, responsif 360–1280px</td>
+            <td>Browser modern</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><span class="comp-badge comp-badge--amber">Prompt Engine</span></td>
+            <td>IBM Bob AI</td>
+            <td>Menerima 1 kalimat ide, menghasilkan seluruh artefak SDLC terstruktur</td>
+            <td>IBM AI Platform</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><span class="comp-badge comp-badge--green">Output Renderer</span></td>
+            <td>Static HTML</td>
+            <td>Me-render dokumen PRD, diagram, user stories, API spec, TODO, rencana uji</td>
+            <td>UI Layer</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><span class="comp-badge comp-badge--purple">Print Module</span></td>
+            <td>CSS @media print</td>
+            <td>Menyembunyikan nav, menampilkan semua panel untuk output cetak/PDF</td>
+            <td>CSS3 Print API</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Data Flow -->
+    <h3 class="subsection-title">Alur Data</h3>
+    <div class="dataflow">
+      <div class="df-step"><span class="df-num">01</span><span class="df-text">User mengetik <em>1 kalimat ide produk</em> ke dalam interface</span></div>
+      <div class="df-arrow">↓</div>
+      <div class="df-step"><span class="df-num">02</span><span class="df-text">IBM Bob AI memproses prompt dan menghasilkan struktur SDLC</span></div>
+      <div class="df-arrow">↓</div>
+      <div class="df-step"><span class="df-num">03</span><span class="df-text">Output di-render sebagai HTML statis dengan 6 tab terpisah</span></div>
+      <div class="df-arrow">↓</div>
+      <div class="df-step"><span class="df-num">04</span><span class="df-text">Reviewer mengakses via browser atau print ke PDF</span></div>
+    </div>
+  </section>
+
+  <!-- ==================== PANEL 4: USER STORIES ==================== -->
+  <section class="panel" id="panel4" aria-labelledby="us-heading">
+    <h2 id="us-heading" class="section-title">📖 User Stories</h2>
+
+    <div class="us-grid">
+
+      <article class="us-card">
+        <div class="us-header">
+          <span class="us-id">US-01</span>
+          <span class="us-priority us-priority--high">Prioritas Tinggi</span>
+        </div>
+        <p class="us-story"><strong>Sebagai</strong> seorang product manager, <strong>saya ingin</strong> memasukkan satu kalimat ide produk ke dalam platform, <strong>agar</strong> saya mendapatkan PRD lengkap tanpa harus menulisnya dari nol.</p>
+        <div class="us-criteria">
+          <h4>Kriteria Penerimaan</h4>
+          <ul>
+            <li>Ide di-echo verbatim di Hero section</li>
+            <li>PRD mencakup tujuan, problem, target user, scope, dan acceptance criteria</li>
+            <li>Output tersedia dalam ≤ 3 detik</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="us-card">
+        <div class="us-header">
+          <span class="us-id">US-02</span>
+          <span class="us-priority us-priority--high">Prioritas Tinggi</span>
+        </div>
+        <p class="us-story"><strong>Sebagai</strong> seorang developer, <strong>saya ingin</strong> melihat diagram arsitektur yang jelas, <strong>agar</strong> saya memahami alur sistem sebelum mulai coding.</p>
+        <div class="us-criteria">
+          <h4>Kriteria Penerimaan</h4>
+          <ul>
+            <li>Diagram menampilkan minimal 4 node: Client → Bob → HTML → Reviewer</li>
+            <li>Tabel komponen mendokumentasikan teknologi dan peran tiap komponen</li>
+            <li>Diagram responsif di semua ukuran layar</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="us-card">
+        <div class="us-header">
+          <span class="us-id">US-03</span>
+          <span class="us-priority us-priority--med">Prioritas Menengah</span>
+        </div>
+        <p class="us-story"><strong>Sebagai</strong> seorang tech lead, <strong>saya ingin</strong> melihat spesifikasi API dan skema data, <strong>agar</strong> tim backend dan frontend dapat bekerja secara paralel.</p>
+        <div class="us-criteria">
+          <h4>Kriteria Penerimaan</h4>
+          <ul>
+            <li>Minimal 3 endpoint dengan Method, Path, Input, dan Output</li>
+            <li>Minimal 1 skema data JSON terdokumentasi</li>
+            <li>Format konsisten dan mudah dibaca</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="us-card">
+        <div class="us-header">
+          <span class="us-id">US-04</span>
+          <span class="us-priority us-priority--med">Prioritas Menengah</span>
+        </div>
+        <p class="us-story"><strong>Sebagai</strong> seorang QA engineer, <strong>saya ingin</strong> melihat rencana uji dan analisis risiko, <strong>agar</strong> saya dapat mempersiapkan test suite sebelum development selesai.</p>
+        <div class="us-criteria">
+          <h4>Kriteria Penerimaan</h4>
+          <ul>
+            <li>Minimal 5 skenario uji dengan expected result</li>
+            <li>Minimal 3 risiko dengan tingkat severity dan rencana mitigasi</li>
+            <li>Setiap risiko memiliki owner yang jelas</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="us-card">
+        <div class="us-header">
+          <span class="us-id">US-05</span>
+          <span class="us-priority us-priority--low">Prioritas Rendah</span>
+        </div>
+        <p class="us-story"><strong>Sebagai</strong> seorang stakeholder non-teknis, <strong>saya ingin</strong> mencetak atau mengekspor dokumen SDLC ke PDF, <strong>agar</strong> saya dapat membagikannya kepada investor atau klien.</p>
+        <div class="us-criteria">
+          <h4>Kriteria Penerimaan</h4>
+          <ul>
+            <li>@media print menyembunyikan navigasi tab</li>
+            <li>Semua panel tampil saat dicetak</li>
+            <li>Layout print-friendly, tidak ada elemen terpotong</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="us-card">
+        <div class="us-header">
+          <span class="us-id">US-06</span>
+          <span class="us-priority us-priority--low">Prioritas Rendah</span>
+        </div>
+        <p class="us-story"><strong>Sebagai</strong> seorang peserta hackathon, <strong>saya ingin</strong> mengakses studio ini dari perangkat mobile, <strong>agar</strong> saya dapat bekerja dari mana saja tanpa laptop.</p>
+        <div class="us-criteria">
+          <h4>Kriteria Penerimaan</h4>
+          <ul>
+            <li>Tampilan responsif di 360px (mobile) hingga 1280px (desktop)</li>
+            <li>Tidak ada horizontal scroll pada viewport manapun</li>
+            <li>Tab navigasi dapat diakses dengan mudah di layar sentuh</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ==================== PANEL 5: API & DATA ==================== -->
+  <section class="panel" id="panel5" aria-labelledby="api-heading">
+    <h2 id="api-heading" class="section-title">🔌 API &amp; Spesifikasi Data</h2>
+
+    <p class="panel-note">⚠️ <em>Catatan: Platform ini adalah HTML-only tanpa backend. Spesifikasi API berikut merupakan kontrak antarmuka yang dapat diimplementasikan jika diperlukan integrasi di masa depan.</em></p>
+
+    <!-- Endpoint Table -->
+    <h3 class="subsection-title">Daftar Endpoint</h3>
+    <div class="table-wrap">
+      <table class="data-table api-table" aria-label="Tabel endpoint API Prompt-to-SDLC">
+        <thead>
+          <tr>
+            <th scope="col">Method</th>
+            <th scope="col">Path</th>
+            <th scope="col">Deskripsi</th>
+            <th scope="col">Input</th>
+            <th scope="col">Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="method-badge method-post">POST</span></td>
+            <td><code>/api/v1/generate</code></td>
+            <td>Generate seluruh dokumen SDLC dari satu kalimat ide</td>
+            <td><code>{ "idea": "string" }</code></td>
+            <td><code>{ "sdlc": SDLCDocument }</code></td>
+          </tr>
+          <tr>
+            <td><span class="method-badge method-get">GET</span></td>
+            <td><code>/api/v1/document/:id</code></td>
+            <td>Ambil dokumen SDLC yang sudah di-generate berdasarkan ID</td>
+            <td><code>id: string (path param)</code></td>
+            <td><code>{ "sdlc": SDLCDocument }</code></td>
+          </tr>
+          <tr>
+            <td><span class="method-badge method-post">POST</span></td>
+            <td><code>/api/v1/export/html</code></td>
+            <td>Ekspor dokumen SDLC sebagai file HTML statis siap unduh</td>
+            <td><code>{ "doc_id": "string" }</code></td>
+            <td><code>Content-Type: text/html (file)</code></td>
+          </tr>
+          <tr>
+            <td><span class="method-badge method-put">PUT</span></td>
+            <td><code>/api/v1/document/:id</code></td>
+            <td>Perbarui satu bagian dokumen (PRD, user stories, dll)</td>
+            <td><code>{ "section": "string", "content": "object" }</code></td>
+            <td><code>{ "updated": true, "sdlc": SDLCDocument }</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Skema Data -->
+    <h3 class="subsection-title">Skema Data: <code>SDLCDocument</code></h3>
+    <div class="schema-wrap">
+      <pre class="code-block" aria-label="Skema JSON SDLCDocument"><code>{
+  "SDLCDocument": {
+    "id":          "string   — UUID unik dokumen",
+    "idea":        "string   — Kalimat ide produk asli (verbatim)",
+    "created_at":  "string   — ISO 8601 timestamp",
+    "prd": {
+      "objective":    "string",
+      "problem":      "string[]",
+      "target_users": "string[]",
+      "scope_in":     "string[]",
+      "scope_out":    "string[]",
+      "acceptance":   "string[]  — min 5 kriteria"
+    },
+    "architecture": {
+      "nodes":      "ArchNode[]",
+      "components": "Component[]"
+    },
+    "user_stories": "UserStory[]  — min 5 item",
+    "api_spec": {
+      "endpoints": "Endpoint[]  — min 3 item",
+      "schemas":   "Schema[]"
+    },
+    "todo": {
+      "tasks":    "Task[]  — 10 checkbox",
+      "timeline": "Phase[]  — 5 tahap"
+    },
+    "test_plan": {
+      "test_cases": "TestCase[]  — min 5",
+      "risks":      "Risk[]  — min 3 + mitigasi"
+    }
+  },
+
+  "UserStory": {
+    "id":       "string   — US-01, US-02, ...",
+    "as_a":     "string   — peran pengguna",
+    "i_want":   "string   — keinginan",
+    "so_that":  "string   — manfaat",
+    "criteria": "string[]"
+  },
+
+  "Endpoint": {
+    "method":      "GET | POST | PUT | DELETE | PATCH",
+    "path":        "string",
+    "description": "string",
+    "input":       "object | null",
+    "output":      "object"
+  },
+
+  "Task": {
+    "id":        "string",
+    "label":     "string",
+    "done":      "boolean",
+    "phase":     "string   — referensi ke Phase.id"
+  }
+}</code></pre>
+    </div>
+  </section>
+
+  <!-- ==================== PANEL 6: TODO + TEST ==================== -->
+  <section class="panel" id="panel6" aria-labelledby="todo-heading">
+    <h2 id="todo-heading" class="section-title">✅ TODO, Timeline &amp; Rencana Uji</h2>
+
+    <!-- ---- TODO Checklist ---- -->
+    <h3 class="subsection-title">📝 TODO List (10 Task)</h3>
+
+    <!-- Progress bar (CSS counter trick) -->
+    <div class="progress-wrap" aria-label="Progress task">
+      <div class="progress-label">Progress: <span class="progress-count">menggunakan checkbox di bawah</span></div>
+      <div class="progress-bar-outer">
+        <div class="progress-bar-inner"></div>
+      </div>
+    </div>
+
+    <div class="todo-list" role="list">
+      <label class="todo-item" role="listitem">
+        <input type="checkbox" class="todo-check" checked />
+        <span class="todo-text"><span class="task-id">T-01</span> Definisikan ide produk dan echo di Hero section</span>
+      </label>
+      <label class="todo-item" role="listitem">
+        <input type="checkbox" class="todo-check" checked />
+        <span class="todo-text"><span class="task-id">T-02</span> Buat struktur HTML5 dengan 6 tab CSS-only (radio button)</span>
+      </label>
+      <label class="todo-item" role="listitem">
+        <input type="checkbox" class="todo-check" checked />
+        <span class="todo-text"><span class="task-id">T-03</span> Tulis PRD: tujuan, problem, target user, scope, acceptance criteria</span>
+      </label>
+      <label class="todo-item" role="listitem">
+        <input type="checkbox" class="todo-check" checked />
+        <span class="todo-text"><span class="task-id">T-04</span> Buat diagram arsitektur CSS (Client→Bob→HTML→Reviewer)</span>
+      </label>
+      <label class="todo-item" role="listitem">
+        <input type="checkbox" class="todo-check" />
+        <span class="todo-text"><span class="task-id">T-05</span> Tulis minimal 5 user stories format Sebagai/Saya/Agar + kriteria</span>
+      </label>
+      <label class="todo-item" role="listitem">
+        <input type="checkbox" class="todo-check" />
+        <span class="todo-text"><span class="task-id">T-06</span> Dokumentasikan 3+ endpoint API dan 1 skema data JSON</span>
+      </label>
+      <label class="todo-item" role="listitem">
+        <input type="checkbox" class="todo-check" />
+        <span class="todo-text"><span class="task-id">T-07</span> Buat TODO list + progress bar + timeline 5 tahap</span>
+      </label>
+      <label class="todo-item" role="listitem">
+        <input type="checkbox" class="todo-check" />
+        <span class="todo-text"><span class="task-id">T-08</span> Tulis 5 skenario uji dan 3 risiko beserta mitigasinya</span>
+      </label>
+      <label class="todo-item" role="listitem">
+        <input type="checkbox" class="todo-check" />
+        <span class="todo-text"><span class="task-id">T-09</span> Pastikan responsif 360px–1280px dan WCAG AA contrast</span>
+      </label>
+      <label class="todo-item" role="listitem">
+        <input type="checkbox" class="todo-check" />
+        <span class="todo-text"><span class="task-id">T-10</span> Validasi @media print: semua panel tampil, nav tersembunyi</span>
+      </label>
+    </div>
+
+    <!-- ---- Timeline ---- -->
+    <h3 class="subsection-title">📅 Timeline Pengembangan (5 Tahap)</h3>
+    <div class="timeline">
+      <div class="tl-item tl-done">
+        <div class="tl-marker">✓</div>
+        <div class="tl-content">
+          <h4>Fase 1 — Discovery <span class="tl-date">Minggu 1</span></h4>
+          <p>Definisi ide produk, riset pengguna, validasi problem statement, pembuatan PRD awal.</p>
+        </div>
+      </div>
+      <div class="tl-item tl-done">
+        <div class="tl-marker">✓</div>
+        <div class="tl-content">
+          <h4>Fase 2 — Design <span class="tl-date">Minggu 2</span></h4>
+          <p>Perancangan arsitektur sistem, diagram komponen, wireframe UI, user stories, spesifikasi API.</p>
+        </div>
+      </div>
+      <div class="tl-item tl-active">
+        <div class="tl-marker">▶</div>
+        <div class="tl-content">
+          <h4>Fase 3 — Development <span class="tl-date">Minggu 3–4</span></h4>
+          <p>Implementasi HTML5/CSS3, integrasi IBM Bob AI, pengembangan semua panel SDLC.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker">○</div>
+        <div class="tl-content">
+          <h4>Fase 4 — Testing <span class="tl-date">Minggu 5</span></h4>
+          <p>Unit test, cross-browser testing, aksesibilitas WCAG AA, validasi print layout.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker">○</div>
+        <div class="tl-content">
+          <h4>Fase 5 — Launch <span class="tl-date">Minggu 6</span></h4>
+          <p>Deployment ke static hosting, demo hackathon, pengumpulan feedback, iterasi pasca-launch.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- Test Cases ---- -->
+    <h3 class="subsection-title">🧪 Rencana Uji (5 Skenario)</h3>
+    <div class="table-wrap">
+      <table class="data-table" aria-label="Tabel skenario uji">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nama Test</th>
+            <th scope="col">Langkah</th>
+            <th scope="col">Expected Result</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>TC-01</code></td>
+            <td>Echo Ide Produk</td>
+            <td>Buka tab Hero, periksa blockquote</td>
+            <td>Ide produk tampil verbatim 100%</td>
+            <td><span class="status-badge status-pass">Pass</span></td>
+          </tr>
+          <tr>
+            <td><code>TC-02</code></td>
+            <td>Navigasi Tab CSS</td>
+            <td>Klik semua 6 label tab secara berurutan</td>
+            <td>Setiap panel tampil, panel lain tersembunyi</td>
+            <td><span class="status-badge status-pass">Pass</span></td>
+          </tr>
+          <tr>
+            <td><code>TC-03</code></td>
+            <td>Responsif Mobile</td>
+            <td>Resize viewport ke 360px</td>
+            <td>Tidak ada horizontal scroll, semua konten terbaca</td>
+            <td><span class="status-badge status-pass">Pass</span></td>
+          </tr>
+          <tr>
+            <td><code>TC-04</code></td>
+            <td>Print Layout</td>
+            <td>Trigger Ctrl+P / @media print</td>
+            <td>Nav tersembunyi, semua 6 panel tampil berurutan</td>
+            <td><span class="status-badge status-pending">Pending</span></td>
+          </tr>
+          <tr>
+            <td><code>TC-05</code></td>
+            <td>Aksesibilitas WCAG AA</td>
+            <td>Jalankan aXe / Lighthouse accessibility audit</td>
+            <td>Score ≥ 90, zero critical violation, contrast ratio ≥ 4.5:1</td>
+            <td><span class="status-badge status-pending">Pending</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ---- Risk Analysis ---- -->
+    <h3 class="subsection-title">⚠️ Analisis Risiko &amp; Mitigasi</h3>
+    <div class="risk-grid">
+      <div class="risk-card risk-high">
+        <div class="risk-header">
+          <span class="risk-id">R-01</span>
+          <span class="risk-level">🔴 Tinggi</span>
+        </div>
+        <h4>Konten Tidak Konsisten dengan Ide Produk</h4>
+        <p><strong>Dampak:</strong> PRD dan user stories tidak relevan dengan ide user, mengurangi nilai output.</p>
+        <p><strong>Probabilitas:</strong> Sedang — bergantung pada kualitas prompt IBM Bob.</p>
+        <div class="mitigation">
+          <strong>Mitigasi:</strong> Sematkan ide produk sebagai context anchor di setiap bagian dokumen; lakukan review konsistensi sebelum render final.
+        </div>
+        <p class="risk-owner"><strong>Owner:</strong> Product Manager</p>
+      </div>
+
+      <div class="risk-card risk-med">
+        <div class="risk-header">
+          <span class="risk-id">R-02</span>
+          <span class="risk-level">🟡 Menengah</span>
+        </div>
+        <h4>Kompatibilitas Browser Lama</h4>
+        <p><strong>Dampak:</strong> CSS radio-tab trick tidak berfungsi di browser legacy (IE11 ke bawah).</p>
+        <p><strong>Probabilitas:</strong> Rendah — target pengguna menggunakan browser modern.</p>
+        <div class="mitigation">
+          <strong>Mitigasi:</strong> Tambahkan @supports query; sediakan fallback dengan semua panel visible di browser tanpa CSS :checked support.
+        </div>
+        <p class="risk-owner"><strong>Owner:</strong> Frontend Developer</p>
+      </div>
+
+      <div class="risk-card risk-low">
+        <div class="risk-header">
+          <span class="risk-id">R-03</span>
+          <span class="risk-level">🟢 Rendah</span>
+        </div>
+        <h4>Keterbacaan pada Ukuran Layar Sangat Kecil (&lt;360px)</h4>
+        <p><strong>Dampak:</strong> Tabel dan diagram bisa terpotong di perangkat dengan layar &lt; 360px.</p>
+        <p><strong>Probabilitas:</strong> Sangat Rendah — mayoritas smartphone modern ≥ 360px.</p>
+        <div class="mitigation">
+          <strong>Mitigasi:</strong> Gunakan overflow-x: auto pada semua tabel; pastikan min-width tabel tidak melebihi 100vw.
+        </div>
+        <p class="risk-owner"><strong>Owner:</strong> QA Engineer</p>
+      </div>
+    </div>
+
+  </section>
+
+</main><!-- end .tab-content -->
+
+<!-- ============================================================
+     FOOTER KREDIT (Section 8)
+     ============================================================ -->
+<footer class="site-footer" id="footer-kredit">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">⬡ Prompt-to-SDLC Studio</span>
+      <p class="footer-tagline">Mengubah satu kalimat menjadi SDLC lengkap — ditenagai IBM Bob AI.</p>
+    </div>
+    <div class="footer-credits">
+      <h3 class="footer-credits-title">Kredit &amp; Pengakuan</h3>
+      <ul class="credits-list">
+        <li>🤖 <strong>IBM Bob AI</strong> — Prompt Engine &amp; SDLC Generator</li>
+        <li>🏆 <strong>IBM AI Builders Challenge</strong> — National Hackathon 2025</li>
+        <li>🌐 <strong>Dibangun dengan</strong> HTML5 + CSS3 murni (zero JS, zero framework)</li>
+        <li>♿ <strong>Aksesibilitas</strong> WCAG 2.1 Level AA</li>
+      </ul>
+    </div>
+    <div class="footer-tech">
+      <h3 class="footer-credits-title">Tech Stack</h3>
+      <div class="tech-badges">
+        <span class="tech-badge">HTML5</span>
+        <span class="tech-badge">CSS3</span>
+        <span class="tech-badge">IBM Bob AI</span>
+        <span class="tech-badge">WCAG AA</span>
+        <span class="tech-badge">Print-Ready</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Prompt-to-SDLC Studio — IBM AI Builders Challenge</span>
+    <span class="footer-sep">|</span>
+    <span>Dibuat dengan ♥ untuk National Hackathon</span>
+  </div>
+</footer>
+
+</body>
+</html>
