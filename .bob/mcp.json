@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "langflow": {
+      "command": "uvx",
+      "args": ["--from", "lfx", "lfx-mcp"],
+      "env": {
+        "LANGFLOW_SERVER_URL": "http://localhost:7860",
+        "LANGFLOW_API_KEY": "${env:LANGFLOW_API_KEY}"
+      }
+    },
+    "lf-starter_project": {
+      "command": "uvx",
+      "args": [
+        "--with", "mcp<2.0.0",
+        "mcp-proxy",
+        "--transport", "streamablehttp",
+        "--headers", "x-api-key", "${env:LANGFLOW_API_KEY}",
+        "http://127.0.0.1:7860/api/v1/mcp/project/3fe8dbcc-e2a4-4907-ad15-ee581ab037f9/streamable"
+      ]
+    }
+  }
+}
